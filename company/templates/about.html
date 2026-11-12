@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% load static %}
+
+<section>
+  {% block content %}
+  <main>
+    <section class="service-hero-image about-hero-image">
+      <section class="service-hero-content">
+        <h4>ABOUT US</h4>
+        <h3>CLEANING YOU CAN TRUST, PEOPLE YOU'LL LOVE</h3>
+      </section>
+    </section>
+
+    <section class="about-page">
+      <section class="about-page-card">
+        <img
+          src="{% static 'images/about-page.png' %}"
+          alt="home-cleaning"
+          srcset=""
+        />
+        <div class="about-page-content story-text" id="story-text">
+          <h3>OUR STORY</h3>
+          <p id="story-paragraph">
+            CS Cleaning Services started with a simple idea: cleaning shouldn't
+            be a chore you dread, and it shouldn't be something you have to
+            worry about either. What began as a small two-person operation,
+            cleaning a handful of homes around the neighborhood, has grown into
+            a trusted team serving households and businesses across the city.
+            <br /><br />
+            In the early days, we did things the hard way — knocking on doors,
+            asking for referrals, and letting our work speak for itself. That
+            focus on quality and consistency is still at the heart of everything
+            we do today. Every client we've kept has been earned through
+            reliable, detail-oriented service, not flashy promises.
+            <br /><br />
+            What hasn't changed is our philosophy: show up on time, treat every
+            space like it's our own, and leave it better than we found it. We
+            know letting someone into your home or office takes trust, and we
+            don't take that lightly. That's why every member of our team is
+            vetted, trained, and held to the same high standard.
+            <br /><br />
+            Today, CS Cleaning Services is proud to be the cleaning partner
+            people recommend to their friends, neighbors, and coworkers. We're
+            still growing, but our mission hasn't moved an inch — to make every
+            space we touch a little cleaner, a little brighter, and a lot more
+            livable.
+          </p>
+        </div>
+        <button class="read-more-btn" id="read-more-btn">Read more</button>
+      </section>
+
+      <section class="stats">
+        <section class="stats-grid">
+          {% for item in about_stats%}
+          <div class="stats-content">
+            <p class="stat-number">
+              <span class="count" data-target="{{item.figures}}">0</span
+              ><sup>{{item.subset}}</sup>
+            </p>
+            <h5>{{item.description}}</h5>
+          </div>
+          {% endfor %}
+        </section>
+      </section>
+
+      <section class="our-team-section">
+        <h2>Meet The Team</h2>
+        <section class="our-team-section-grid">
+          {% for item in team %}
+          <section class="team-members-card">
+            <div><p>{{item.initial}}</p></div>
+            <p>{{item.name}}</p>
+            <h4>{{item.position}}</h4>
+          </section>
+          {% endfor %}
+        </section>
+      </section>
+
+      <button class="call-button book-service-button">
+        <a href=""
+          >BOOK A SERVICE<img
+            src="{% static 'images/arrow_right.png' %}"
+            alt="arrow_right"
+            srcset=""
+        /></a>
+      </button>
+    </section>
+  </main>
+  {% endblock %}
+</section>

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+<section>
+  {% block content %}
+  <main>
+    <section class="service-hero-image contact-hero-image">
+      <section class="service-hero-content">
+        <h4>CONTACT US</h4>
+        <h3>LET'S GET YOUR SPACE SPOTLESS</h3>
+      </section>
+    </section>
+
+    <section class="contact-page">
+      <section class="contact-page-grid">
+        <section class="contact-page-grid-content">
+          <div class="contact-address">
+            <p>
+              <a href="tel:+2349115954471"
+                ><span class="material-symbols-outlined"> add_call </span> +1
+                (407) 283-9154</a
+              >
+            </p>
+
+            <p>
+              <a href="mailto:hello@cscleaningservices.com"
+                ><span class="material-symbols-outlined"> mail </span>
+
+                hello@cscleaningservices.com</a
+              >
+            </p>
+
+            <p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=84+Maplewood+Drive,+Orlando,+FL+32801"
+                target="_blank"
+                ><span class="material-symbols-outlined"> location_on </span>
+                84 Maplewood Drive, Orlando, FL 32801
+              </a>
+            </p>
+          </div>
+
+          <div class="hours-card">
+            <div class="hours-status" id="hours-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Checking hours...</span>
+            </div>
+
+            <h3 class="hours-title">Business hours</h3>
+
+            <div class="hours-row" data-day="monday">
+              <span>Monday</span><span>8:00am - 6:00pm</span>
+            </div>
+            <div class="hours-row" data-day="tuesday">
+              <span>Tuesday</span><span>8:00am - 6:00pm</span>
+            </div>
+            <div class="hours-row" data-day="wednesday">
+              <span>Wednesday</span><span>8:00am - 6:00pm</span>
+            </div>
+            <div class="hours-row" data-day="thursday">
+              <span>Thursday</span><span>8:00am - 6:00pm</span>
+            </div>
+            <div class="hours-row" data-day="friday">
+              <span>Friday</span><span>8:00am - 6:00pm</span>
+            </div>
+            <div class="hours-row" data-day="saturday">
+              <span>Saturday</span><span>9:00am - 4:00pm</span>
+            </div>
+            <div class="hours-row" data-day="sunday">
+              <span>Sunday</span><span>Closed</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-page-grid-form">
+          <h2>Send Us A Message</h2>
+          <form action="">
+            <div class="input-group">
+              <input type="text" id="name" required />
+              <label for="name">Your Name</label>
+            </div>
+
+            <div class="input-group">
+              <input type="email" id="email" required />
+              <label for="email">Your Email</label>
+            </div>
+
+            <div class="input-group">
+              <input type="tel" id="tel" required />
+              <label for="tel">Phone Number</label>
+            </div>
+
+            <div class="input-group">
+              <select id="service-type" required>
+                <option value="" disabled selected hidden></option>
+                <option value="residential-cleaning">
+                  Residential Cleaning
+                </option>
+                <option value="commercial-cleaning">Commercial Cleaning</option>
+                <option value="customized-cleaning">Customized Cleaning</option>
+              </select>
+              <label for="service-type">Type of Cleaning Needed </label>
+            </div>
+
+            <div class="input-group">
+              <textarea name="textarea" id="textarea" required></textarea>
+              <label for="textarea">Tell Us About Your Cleaning Needs</label>
+            </div>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </section>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14016.699211518859!2d-81.3584209!3d28.5645132!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1782146329354!5m2!1sen!2sng"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+  {% endblock %}
+</section>

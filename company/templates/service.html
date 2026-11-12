@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %}
+
+<section>
+  {% block content %}
+  <main>
+    <section class="service-hero-image">
+      <section class="service-hero-content">
+        <h4>OUR SERVICES</h4>
+        <h3>EVERYTHING ON THE LIST, TAKEN CARE OF</h3>
+      </section>
+    </section>
+
+    <section class="service-page">
+      <h2>All Our Services</h2>
+      <section class="service-page-grid">
+        {% for items in services %}
+        <section class="service-page-card">
+          <img
+            class="service-page-card-image"
+            src="{% static 'images/' %}{{items.image_id}}.jpg"
+            alt="{{items.image_id}}"
+            srcset=""
+          />
+          <div class="service-page-grid-content extra">
+            <span class="material-symbols-outlined"> {{items.icon_id}} </span>
+            <h3>{{items.title}}</h3>
+            <p>{{items.description}}</p>
+            {% if items.extras %}
+            <h4 class="additional-tags">{{items.extras}}</h4>
+            {% endif%}
+          </div>
+        </section>
+        {% endfor %}
+      </section>
+      <button class="call-button book-service-button">
+        <a href=""
+          >BOOK A SERVICE<img
+            src="{% static 'images/arrow_right.png' %}"
+            alt="arrow_right"
+            srcset=""
+        /></a>
+      </button>
+    </section>
+  </main>
+  {% endblock %}
+</section>
