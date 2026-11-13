@@ -24,10 +24,11 @@
           <div class="service-page-grid-content extra">
             <span class="material-symbols-outlined"> {{items.icon_id}} </span>
             <h3>{{items.title}}</h3>
-            <p>{{items.description}}</p>
+            <p>{{items.description|truncatechars:150}}</p>
             {% if items.extras %}
             <h4 class="additional-tags">{{items.extras}}</h4>
             {% endif%}
+            <a href="{% url 'service_detail' items.id %}"> READ MORE </a>
           </div>
         </section>
         {% endfor %}

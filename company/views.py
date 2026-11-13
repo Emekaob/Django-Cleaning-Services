@@ -40,3 +40,11 @@ def service(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def service_detail(request, pk):
+    service = Services.objects.get(id=pk)
+    context = {
+            'services': service
+        }
+    print(service)
+    return render(request, 'service-detail.html', context=context)

@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% load static %}
+
+<section>
+  {% block content %}
+  <main>
+    <section class="about-page-card">
+      <img
+        src="{% static 'images/about-page.png' %}"
+        alt="home-cleaning"
+        srcset=""
+      />
+      <div class="about-page-content story-text" id="story-text">
+        <h3>OUR STORY</h3>
+        <p id="story-paragraph">{{services.description}}</p>
+      </div>
+      <button class="read-more-btn" id="read-more-btn">Read more</button>
+    </section>
+  </main>
+  {% endblock %}
+</section>
