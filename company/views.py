@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Team, AboutStats, HomeStats, HomeServices, WhyUs, Services, Reviews
+from .models import Team, AboutStats, HomeStats, HomeServices, WhyUs, Services, Reviews, CompanyInfo
 
 # Create your views here.
 
@@ -44,7 +44,15 @@ def contact(request):
 def service_detail(request, pk):
     service = Services.objects.get(id=pk)
     context = {
-            'services': service
+            'services': service,
         }
-    print(service)
     return render(request, 'service-detail.html', context=context)
+
+def footer(request):
+    company_info = CompanyInfo.objects.all()
+
+    context = {
+        'company_info' : company_info
+    }
+
+    return render(request, 'footer.html', context=context)

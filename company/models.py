@@ -58,3 +58,14 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.name
+
+class CompanyInfo(models.Model):
+    company_name = models.CharField(max_length=255, default='')
+    footer_about = models.CharField(max_length=255)
+    address = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=255)
+    email = models.CharField(max_length=100)
+    tel = models.PositiveIntegerField()
+
+    def __str__(self):
+            return self.company_name

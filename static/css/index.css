@@ -576,6 +576,11 @@ button.book-service-button a {
   margin-top: 0.5rem;
 }
 
+.service-page-grid a {
+  color: black;
+  text-decoration: underline;
+}
+
 /* About Page */
 
 .about-hero-image {

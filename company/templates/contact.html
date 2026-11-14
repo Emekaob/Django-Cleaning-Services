@@ -14,17 +14,17 @@
         <section class="contact-page-grid-content">
           <div class="contact-address">
             <p>
-              <a href="tel:+2349115954471"
+              <a href="tel:{{coy.tel}}"
                 ><span class="material-symbols-outlined"> add_call </span> +1
-                (407) 283-9154</a
+                {{coy.tel}}</a
               >
             </p>
 
             <p>
-              <a href="mailto:hello@cscleaningservices.com"
+              <a href="mailto:{{coy.email}}"
                 ><span class="material-symbols-outlined"> mail </span>
 
-                hello@cscleaningservices.com</a
+                {{coy.email}}</a
               >
             </p>
 
@@ -33,7 +33,7 @@
                 href="https://www.google.com/maps/search/?api=1&query=84+Maplewood+Drive,+Orlando,+FL+32801"
                 target="_blank"
                 ><span class="material-symbols-outlined"> location_on </span>
-                84 Maplewood Drive, Orlando, FL 32801
+                {{coy.address}}
               </a>
             </p>
           </div>

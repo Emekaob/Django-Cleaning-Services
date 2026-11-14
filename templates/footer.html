@@ -2,11 +2,7 @@
   <section class="footer-grid">
     <section class="about-card">
       <h6>ABOUT</h6>
-      <p>
-        CS is committed to delivering spotless results for homes and businesses.
-        We bring professionalism, care and eco-friendly solutions to every
-        clean.
-      </p>
+      <p>{{coy.footer_about}}</p>
       <button class="call-button read-more-button">
         <a href="">Read More</a>
       </button>
@@ -25,19 +21,12 @@
       <h6>CONTACT</h6>
       <address>
         Address:
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=84+Maplewood+Drive,+Orlando,+FL+32801"
-          target="_blank"
-        >
-          84 Maplewood Drive, Orlando, FL 32801
-        </a>
+        <a href="{{coy.address_link}}" target="_blank"> {{coy.address}}</a>
       </address>
       <p>
-        <a href="mailto:hello@cscleaningservices.com">
-          hello@cscleaningservices.com</a
-        >
+        <a href="mailto:{{coy.email}}"> {{coy.email}}</a>
       </p>
-      <p>Tel:<a href="tel:+2349115954471"> +1 (407) 283-9154</a></p>
+      <p>Tel:<a href="tel:{{coy.tel}}"> +{{coy.tel}}</a></p>
     </section>
 
     <section class="social-icon-card">
