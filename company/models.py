@@ -63,9 +63,20 @@ class CompanyInfo(models.Model):
     company_name = models.CharField(max_length=255, default='')
     footer_about = models.CharField(max_length=255)
     address = models.CharField(max_length=100)
-    address_link = models.CharField(max_length=255)
-    email = models.CharField(max_length=100)
+    address_link = models.URLField()
+    email = models.EmailField()
     tel = models.PositiveIntegerField()
 
     def __str__(self):
             return self.company_name
+
+class Form(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.PositiveIntegerField()
+    cleaning_type = models.CharField(max_length=50)
+    message = models.TextField()
+    is_read = models.BooleanField(default=False)
+
+    def __str__(self):
+                return self.name

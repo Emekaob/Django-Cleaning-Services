@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms import ContactForm
 from .models import Team, AboutStats, HomeStats, HomeServices, WhyUs, Services, Reviews, CompanyInfo
 
 # Create your views here.
@@ -39,7 +40,16 @@ def service(request):
     return render(request, 'service.html', context=context)
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                form.save()  # Saves directly to the database
+                return redirect('success_page')  # Always redirect after a successful POST
+    else:
+            form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+
 
 def service_detail(request, pk):
     service = Services.objects.get(id=pk)
@@ -56,3 +66,7 @@ def footer(request):
     }
 
     return render(request, 'footer.html', context=context)
+
+    
+def success_page(request):
+    return render(request, 'success_page.html')

@@ -72,36 +72,36 @@
 
         <section class="contact-page-grid-form">
           <h2>Send Us A Message</h2>
-          <form action="">
+          <form method="POST">
+            {% csrf_token %}
+
             <div class="input-group">
-              <input type="text" id="name" required />
+              <input type="text" id="name" name="name" required />
               <label for="name">Your Name</label>
             </div>
 
             <div class="input-group">
-              <input type="email" id="email" required />
+              <input type="email" id="email" name="email" required />
               <label for="email">Your Email</label>
             </div>
 
             <div class="input-group">
-              <input type="tel" id="tel" required />
+              <input type="tel" id="tel" name="phone_number" required />
               <label for="tel">Phone Number</label>
             </div>
 
             <div class="input-group">
-              <select id="service-type" required>
-                <option value="" disabled selected hidden></option>
-                <option value="residential-cleaning">
-                  Residential Cleaning
-                </option>
-                <option value="commercial-cleaning">Commercial Cleaning</option>
-                <option value="customized-cleaning">Customized Cleaning</option>
-              </select>
-              <label for="service-type">Type of Cleaning Needed </label>
+              <input
+                type="cleaning_type"
+                id="cleaning_type"
+                name="cleaning_type"
+                required
+              />
+              <label for="cleaning_type">Type of Cleaning Needed </label>
             </div>
 
             <div class="input-group">
-              <textarea name="textarea" id="textarea" required></textarea>
+              <textarea name="message" id="textarea" required></textarea>
               <label for="textarea">Tell Us About Your Cleaning Needs</label>
             </div>
 
